@@ -1,4 +1,5 @@
 import LoginPage from "../src/pages/LoginPage";
 import SignupPage from "../src/pages/SignupPage";
-export{ LoginPage,SignupPage
+import HomePage from "../src/pages/HomePage";
+export{ LoginPage,SignupPage,HomePage,
 };
