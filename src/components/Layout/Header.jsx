@@ -15,7 +15,7 @@ import Navbar from "./Navbar";
 import { useSelector } from "react-redux";
 import Cart from "../cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
-// import { RxCross1 } from "react-icons/rx";
+import { RxCross1 } from "react-icons/rx";
 
 const Header = ({ activeHeading }) => {
   // const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -23,7 +23,7 @@ const Header = ({ activeHeading }) => {
   const [searchData, setSearchData] = useState(null);
   const [active, setActive] = useState(false);
   const [dropDown, setDropDown] = useState(false);
-  // const [openCart, setOpenCart] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
   // const [openWishlist, setOpenWishlist] = useState(false);
   // const [open, setOpen] = useState(false);
   // const { isSeller } = useSelector((state) => state.seller);
@@ -109,7 +109,7 @@ const Header = ({ activeHeading }) => {
                 </h1>
             </Link>
           </div> */}
-          <div className="w-[200px] bg-blue-500 h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer'">
+          <div className="w-[200px] bg-blue-500 h-[50px] my-3 flex items-center justify-center rounded-md cursor-pointer'">
             <div className="relative">
               <div
                 className="text-[#fff] flex items-center cursor-pointer"
@@ -118,7 +118,7 @@ const Header = ({ activeHeading }) => {
                 Become Seller/Manufacture
               </div>
               {isDropdownOpen && (
-                <div className="absolute right-0 mt-2 bg-white shadow-md p-2">
+                <div className=" z-20 absolute right-0 mt-2 bg-white shadow-md p-2">
                   <Link to="/seller" className=" w-[200px] cursor-pointer">
                     Become Seller
                   </Link>
@@ -168,16 +168,112 @@ const Header = ({ activeHeading }) => {
             <Navbar active={activeHeading} />
           </div>
 
-          
           {/* correct   till here  */}
-<div>
 
-</div>
+          <div className="flex">
+            <div className={`${styles.normalFlex}`}>
+              <div
+                className="relative cursor-pointer mr-[15px]"
+                // onClick={() => setOpenWishlist(true)}
+              >
+               <div div className="z-10">
+                <AiOutlineHeart size={30} color="rgb(255 255 255 / 83%)" />
+                </div>
+                <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                  {/* {wishlist && wishlist.length} */}
+                  0
+                </span>
+                
+              </div>
+            </div>
+
+            <div className={`${styles.normalFlex}`}>
+              <div
+                className="relative cursor-pointer mr-[15px]"
+                onClick={() => setOpenCart(true)}
+              >
+              <div div className="z-10">
+                <AiOutlineShoppingCart size={30} color="rgb(255 255 255 / 83%)" />
+                </div>
+                <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                  {/* {wishlist && wishlist.length} */}
+                  1
+                </span>
+              </div>
+            </div>
+
+            <div className={`${styles.normalFlex}`}>
+              <div
+                className="relative cursor-pointer mr-[15px]"
+                // onClick={() => setOpenWishlist(true)}
+              >
+              {/* {isAuthenticated ? (
+                  <Link to="/profile">
+                    <img
+                      src={`${user?.avatar?.url}`}
+                      className="w-[35px] h-[35px] rounded-full"
+                      alt=""
+                    />
+                  </Link>
+                ) : (
+                  <Link to="/login">
+                    <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
+                  </Link>
+                )} */}
+                <Link to="/login">
+                    <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
+                  </Link>
+              </div>
+            </div>
 
 
 
 
 
+            {/* 
+            <div className={`${styles.normalFlex}`}>
+              <div
+                className="relative cursor-pointer mr-[15px]"
+                onClick={() => setOpenCart(true)}
+              >
+                <AiOutlineShoppingCart
+                  size={30}
+                  color="rgb(255 255 255 / 83%)"
+                />
+                <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                  {cart && cart.length}
+                </span>
+              </div>
+            </div>
+            <div className={`${styles.normalFlex}`}>
+              <div className="relative cursor-pointer mr-[15px]">
+                {isAuthenticated ? (
+                  <Link to="/profile">
+                    <img
+                      src={`${user?.avatar?.url}`}
+                      className="w-[35px] h-[35px] rounded-full"
+                      alt=""
+                    />
+                  </Link>
+                ) : (
+                  <Link to="/login">
+                    <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
+                  </Link>
+                )}
+              </div>
+            </div>}
+            {/* cart popup */}
+            {/* {openCart ? <Cart setOpenCart={setOpenCart} /> : null} */}
+            {/* wishlist popup
+            {openWishlist ? (
+              <Wishlist setOpenWishlist={setOpenWishlist} />
+            ) : null}
+          </div> */}
+
+
+
+
+          </div>
         </div>
       </div>
     </>
