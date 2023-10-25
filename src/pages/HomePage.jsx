@@ -1,12 +1,16 @@
 import React from 'react'
-// import Home from '../components/Home/Home.jsx';
-import Header from '../components/Layout/Header.jsx';
+import Header from "../components/Layout/Header";
+import Hero from "../components/Route/Hero/Hero";
+
+
 const HomePage = () => {
   return (
     <div>
-        <Header/>
+        <Header activeHeading={1} />
+        <Hero />
+
     </div>
   )
 }
 
-export default HomePage;
+export default HomePage
