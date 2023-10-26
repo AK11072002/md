@@ -109,7 +109,7 @@ const Header = ({ activeHeading }) => {
                 </h1>
             </Link>
           </div> */}
-          <div className="w-[200px] bg-blue-500 h-[50px] my-3 flex items-center justify-center rounded-md cursor-pointer'">
+          <div className="w-[200px] bg-teal-600 h-[50px] my-3 flex items-center justify-center rounded-md cursor-pointer'">
             <div className="relative">
               <div
                 className="text-[#fff] flex items-center cursor-pointer"
@@ -138,7 +138,7 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${
           active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#4272ff] h-[70px]`}
+        } transition hidden 800px:flex items-center justify-between w-full bg-[#F79489] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.normalFlex} justify-between`}

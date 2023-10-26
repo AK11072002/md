@@ -8,9 +8,16 @@ const Login = () => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="min-h-screen bg-blue-200 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-blue-200 flex flex-col justify-center py-12 sm:px-6 lg:px-8"  style={{
+      backgroundImage:
+        // "url(https://themes.rslahmed.dev/rafcart/assets/images/banner-2.jpg)",
+        // https://t3.ftcdn.net/jpg/05/40/35/62/240_F_540356243_5SRgLSDDCpSl4VWacWjjHi29c8SPppsF.jpg
+        // "url(https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?size=626&ext=jpg&ga=GA1.2.1471054712.1695892083&semt=ais)",
+         "url(https://img.freepik.com/premium-vector/blockchain-concept-banner_41981-267.jpg)",
+        backgroundSize:"contain",
+    }} >
       <div className="sm:mx-auto sm:w-full sm:max-w-md ">
-        <h2 className="mt-6 text-center text-4xl font-extrabold text-blue-900">
+        <h2 className="mt-6 text-center text-4xl font-extrabold text-white">
           Login to your Account
         </h2>
       </div>

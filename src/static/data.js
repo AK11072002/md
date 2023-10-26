@@ -228,8 +228,8 @@ export const categoriesData = [
     id: 6,
     title: "Gifts",
     subTitle: "",
-    image_Url:
-      "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
+    image_Url:"https://i.pinimg.com/236x/01/3b/da/013bda21d57d3ab9c31c936eaf95c765.jpg"
+      // "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
   },
   {
     id: 7,
@@ -248,8 +248,8 @@ export const categoriesData = [
     id: 9,
     title: "Music and Gaming",
     subTitle: "",
-    image_Url:
-      "https://static.vecteezy.com/system/resources/previews/011/996/555/original/3d-black-headphone-illustration-ecommerce-icon-png.png",
+    image_Url:"https://i.pinimg.com/236x/86/e3/ad/86e3ad8f10d2fe08d2fbc4c2db8d2336.jpg"
+      // "https://static.vecteezy.com/system/resources/previews/011/996/555/original/3d-black-headphone-illustration-ecommerce-icon-png.png",
   },
   {
     id: 10,
@@ -271,11 +271,11 @@ export const productData = [
     image_Url: [
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://i.pinimg.com/236x/4b/0c/56/4b0c56db0c048f1a5d9382db5b82d535.jpg",
       },
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://i.pinimg.com/236x/36/14/91/3614913a0a5208cd329b929ca8a005fb.jpg",
       },
     ],
     shop: {
@@ -283,6 +283,7 @@ export const productData = [
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+        
       },
       ratings: 4.2,
     },
@@ -331,11 +332,11 @@ export const productData = [
     image_Url: [
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://i.pinimg.com/236x/85/d8/40/85d8405f758250a8d5ebf5d7bd98671d.jpg",
       },
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://i.pinimg.com/236x/36/14/91/3614913a0a5208cd329b929ca8a005fb.jpg",
       },
     ],
     shop: {
@@ -343,6 +344,7 @@ export const productData = [
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+        // url:"https://i.pinimg.com/736x/bb/7f/fc/bb7ffc2e6c9858da32c85fa9b8712ac1.jpg",
       },
       ratings: 4.2,
     },

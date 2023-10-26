@@ -10,14 +10,14 @@ import {
 import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
 // import { useDispatch, useSelector } from "react-redux";
-// import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard";
+import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard";
 // import {
 //   addToWishlist,
 //   removeFromWishlist,
 // } from "../../../redux/actions/wishlist";
 import { useEffect } from "react";
 // import { addTocart } from "../../../redux/actions/cart";
-// import { toast } from "react-toastify";
+// import { toast } from "react-toastify"; 
 // import Ratings from "../../Products/Ratings";
 
 const ProductCard = ({ data, isEvent }) => {
@@ -25,7 +25,7 @@ const ProductCard = ({ data, isEvent }) => {
 //   const { cart } = useSelector((state) => state.cart);
   const [click, setClick] = useState(false);
   const [open, setOpen] = useState(false);
-//   const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
 //   useEffect(() => {
 //     if (wishlist && wishlist.find((i) => i._id === data._id)) {
@@ -40,10 +40,10 @@ const ProductCard = ({ data, isEvent }) => {
 //     dispatch(removeFromWishlist(data));
 //   };
 
-//   const addToWishlistHandler = (data) => {
-//     setClick(!click);
-//     dispatch(addToWishlist(data));
-//   };
+  // const addToWishlistHandler = (data) => {
+  //   setClick(!click);
+  //   dispatch(addToWishlist(data));
+  // };
 
 //   const addToCartHandler = (id) => {
 //     const isItemExists = cart && cart.find((i) => i._id === id);
@@ -62,14 +62,11 @@ const ProductCard = ({ data, isEvent }) => {
 
 
 const d=data.name;
-// const product_name=d.replace(/\s+g,"-");
-const product_name = d.replaceAll(RegExp('\s+'), '-');
-
-
+const product_name = d.replace(/\s+/g, "-");
 
   return (
     <>
-      <div className="w-full h-[370px] bg-pink-700 rounded-lg shadow-md p-3 relative cursor-pointer">
+      <div className="w-full h-[370px] bg-#FADCD9 rounded-lg shadow-md p-3 relative cursor-pointer border-2 border-#FCD0CC">
         <div className="flex justify-end"></div>
         {/* <Link
         //   to={`${
@@ -83,13 +80,13 @@ const product_name = d.replaceAll(RegExp('\s+'), '-');
           <img
             // src={`${data.images && data.images[0]?.url}`}
             src={data.image_Url[0].url}
-            alt=""
-            className="w-full h-[170px] object-contain"
+            alt=" images does not loading due to url get changed"
+            className="w-[85%] h-[180px] object-auto shadow-sm  border-2 border-white"
           />
         </Link>
 
         <Link to={`/shop/preview/${data?.shop._id}`}>
-          <h5 className={`${styles.shop_name}`}>{data.shop.name}</h5>
+          <h4 className={`${styles.shop_name}`}>{data.shop.name}</h4>
         </Link>
 
         <Link
@@ -100,26 +97,36 @@ const product_name = d.replaceAll(RegExp('\s+'), '-');
           }`}
         >
           <h4 className="pb-3 font-[500]">
-            {data.name.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
+            {data.name.length > 50 ? data.name.slice(0, 50) + "..." : data.name}
           </h4>
 
-          {/* <div className="flex">
-          <Ratings rating={data?.ratings} />
-          </div> */}
 
+          <div className="flex">
+          {/* <Ratings rating={data?.ratings} /> */}
+          <AiFillStar className="mr-2 cursor-pointer" color="#F6BA00" size={22}/>
+          <AiFillStar className="mr-2 cursor-pointer" color="#F6BA00" size={22}/>
+          <AiFillStar className="mr-2 cursor-pointer" color="#F6BA00" size={22}/>
+          <AiFillStar className="mr-2 cursor-pointer" color="#F6BA00" size={22}/>
+          <AiOutlineStar className="mr-2 cursor-pointer" color="#F6BA00"  size={22}/>  
+        
+          </div>
           <div className="py-2 flex items-center justify-between">
-            <div className="flex">
-              <h5 className={`${styles.productDiscountPrice}`}>
-                {data.originalPrice === 0
+            <div className="flex ">
+              <h5 className={`${styles.productDiscountPrice} `}>
+                {/* {data.originalPrice === 0
                   ? data.originalPrice
-                  : data.discountPrice}
-                $
+                  : data.discountPrice} */}
+                  {data.price === 0
+                  ? data.price
+                  : data.discount_price}
+                  ₹
               </h5>
               <h4 className={`${styles.price}`}>
-                {data.originalPrice ? data.originalPrice + " $" : null}
+                {/* {data.originalPrice ? data.originalPrice + " $" : null} */}
+                {data.price ? data.price + " ₹ " : null}
               </h4>
             </div>
-            <span className="font-[400] text-[17px] text-[#68d284]">
+            <span className="font-[700] text-[18px] text-green-500">
               {data?.sold_out} sold
             </span>
           </div>
@@ -134,6 +141,7 @@ const product_name = d.replaceAll(RegExp('\s+'), '-');
               className="cursor-pointer absolute right-2 top-5"
             //   onClick={() => removeFromWishlistHandler(data)}
               color={click ? "red" : "#333"}
+              onClick={() => setClick(!click)}
               title="Remove from wishlist"
             />
           ) : (
@@ -141,7 +149,8 @@ const product_name = d.replaceAll(RegExp('\s+'), '-');
               size={22}
               className="cursor-pointer absolute right-2 top-5"
             //   onClick={() => addToWishlistHandler(data)}
-              color={click ? "red" : "#333"}
+              color={click ? "red" : "333"}
+              onClick={() => setClick(!click)}
               title="Add to wishlist"
             />
           )}
@@ -156,11 +165,14 @@ const product_name = d.replaceAll(RegExp('\s+'), '-');
             size={25}
             className="cursor-pointer absolute right-2 top-24"
             // onClick={() => addToCartHandler(data._id)}
-            color="#444"
+            color="#F12715"
             title="Add to cart"
           />
-          {/* {open ? <ProductDetailsCard setOpen={setOpen} data={data} /> : null} */}
+          {open ? <ProductDetailsCard setOpen={setOpen} data={data} /> : null}
         
+
+
+
         </div>  
         
       </div>
