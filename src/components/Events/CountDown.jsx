@@ -22,8 +22,8 @@ const CountDown = ({ data }) => {
     // }
 
     return () => clearTimeout(timer);
-  },[]);
-
+//   });
+  });
   function calculateTimeLeft() {
     // const difference = +new Date(data.Finish_Date) - +new Date();
     const difference = +new Date('2023-10-29') - +new Date();
