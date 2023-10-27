@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  AiFillFacebook,
+  // AiFillFacebook,
   AiFillGithub,
   AiFillInstagram,
-  AiFillYoutube,
+  // AiFillYoutube,
   AiOutlineTwitter,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
