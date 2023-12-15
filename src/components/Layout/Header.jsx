@@ -18,13 +18,13 @@ import Wishlist from "../Wishlist/Wishlist";
 import { RxCross1 } from "react-icons/rx";
 
 const Header = ({ activeHeading }) => {
-  // const { isAuthenticated, user } = useSelector((state) => state.user);
+    const { isAuthenticated, user } = useSelector((state) => state.user);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchData, setSearchData] = useState(null);
   const [active, setActive] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const [openCart, setOpenCart] = useState(false);
-  // const [openWishlist, setOpenWishlist] = useState(false);
+  const [openWishlist, setOpenWishlist] = useState(false);
   // const [open, setOpen] = useState(false);
   // const { isSeller } = useSelector((state) => state.seller);
   // const { wishlist } = useSelector((state) => state.wishlist);
@@ -230,7 +230,7 @@ const Header = ({ activeHeading }) => {
 
 
 
-            {/* 
+          
             <div className={`${styles.normalFlex}`}>
               <div
                 className="relative cursor-pointer mr-[15px]"
@@ -261,10 +261,10 @@ const Header = ({ activeHeading }) => {
                   </Link>
                 )}
               </div>
-            </div>}
-            {/* cart popup */}
-            {/* {openCart ? <Cart setOpenCart={setOpenCart} /> : null} */}
-            {/* wishlist popup
+            </div>
+            {/*cart popup*/} 
+             {openCart ? <Cart setOpenCart={setOpenCart} /> : null} 
+       `  `     {/* wishlist popup
             {openWishlist ? (
               <Wishlist setOpenWishlist={setOpenWishlist} />
             ) : null}
